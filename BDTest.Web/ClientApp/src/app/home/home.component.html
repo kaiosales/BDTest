@@ -1,0 +1,10 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+
+  <app-add-request [enabled]="!hasRequest"></app-add-request>
+
+  <app-batch-grid [batches]="batches"></app-batch-grid>
+
+</div>
+
+<app-loading [visible]="isLoading"></app-loading>

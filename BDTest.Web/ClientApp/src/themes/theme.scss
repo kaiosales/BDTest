@@ -1,0 +1,13 @@
+$ClientApp-primary: mat-palette($mat-indigo);
+$ClientApp-accent: mat-palette($mat-orange, A200, A100, A400);
+$ClientApp-warn: mat-palette($mat-red);
+
+$ClientApp-theme: mat-light-theme((
+  color: (
+    primary: $ClientApp-primary,
+    accent: $ClientApp-accent,
+    warn: $ClientApp-warn,
+  )
+));
+
+@include angular-material-theme($ClientApp-theme);

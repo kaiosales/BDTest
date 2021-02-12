@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Grpc.AspNetCore" Version="2.35.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.35.0" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.35.0" />
+      <Protobuf Include="..\BDTest.Core\Protos\GenerateController.proto" GrpcServices="Client" Link="Protos\GenerateController.proto" />
+      <Protobuf Include="..\BDTest.Core\Protos\MultiplyController.proto" GrpcServices="Client" Link="Protos\MultiplyController.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BDTest.Client\BDTest.Client.csproj" />
+  </ItemGroup>
+
+</Project>

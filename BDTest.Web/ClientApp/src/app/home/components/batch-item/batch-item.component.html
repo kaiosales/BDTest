@@ -1,0 +1,28 @@
+<mat-card class="card" [ngClass]="{'done': progress === 100}">
+  <mat-progress-bar class="progress" mode="{{ batch.status === 0 ? 'buffer' : 'determinate' }}" color="accent" [value]="progress"></mat-progress-bar>
+    <mat-card-header>
+        <div mat-card-avatar class="icon">
+          <mat-icon color="primary">batch_prediction</mat-icon>
+        </div>
+        <mat-card-title>{{ batch.id }}</mat-card-title>
+        <mat-card-subtitle>{{ batch.numbers.length }} of {{ batch.count }} ({{progress | number:'1.0-0' }}%)</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="content">
+        <mat-nav-list>
+            <mat-list-item class="item" *ngFor="let number of batch.numbers">
+                <span>
+                  <mat-hint>Number:</mat-hint>
+                  <mat-label>{{ number.number }}</mat-label>
+                </span>
+                <span>
+                  <mat-hint>Product:</mat-hint>
+                  <mat-label>{{ number.product }}</mat-label>
+                </span>
+            </mat-list-item>
+        </mat-nav-list>
+      </mat-card-content>
+      <mat-card-footer class="footer">
+        <mat-hint>Total:</mat-hint>
+        <mat-label color="accent">{{ batch.total }}</mat-label>
+      </mat-card-footer>
+</mat-card>

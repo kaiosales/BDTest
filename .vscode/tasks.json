@@ -1,0 +1,73 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run ALL",
+            "dependsOn": [
+                "run BDTest.Web",
+                "run BDTest.EAPI",
+                "run BDTest.IAPI"
+            ],
+            "type": "shell",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run BDTest.Web",
+            "dependsOn": "build",
+            "command": "dotnet run --project ${workspaceFolder}\\BDTest.Web",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "options": {
+                "env": {
+                    "ASPNETCORE_URLS": "https://localhost:8081;http://localhost:8080",
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            }
+        },
+        {
+            "label": "run BDTest.EAPI",
+            "dependsOn": "build",
+            "command": "dotnet run --project ${workspaceFolder}\\BDTest.EAPI",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "options": {
+                "env": {
+                    "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000",
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            }
+        },
+        {
+            "label": "run BDTest.IAPI",
+            "dependsOn": "build",
+            "command": "dotnet run --project ${workspaceFolder}\\BDTest.IAPI",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "options": {
+                "env": {
+                    "ASPNETCORE_URLS": "https://localhost:6011;http://localhost:6010",
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            }
+        }
+    ]
+}

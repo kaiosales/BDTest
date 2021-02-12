@@ -1,0 +1,36 @@
+
+//Large
+@media only screen and (max-width: 1199px) {
+    .container {
+        .item {
+            flex-basis: 25%;
+        }
+    }
+}
+
+//Medium
+@media only screen and (max-width: 991px) {
+    .container {
+        .item {
+            flex-basis: 33%;
+        }
+    }
+}
+
+//Small
+@media only screen and (max-width: 767px) {
+    .container {
+        .item {
+            flex-basis: 50%;
+        }
+    }
+}
+
+//X-Small
+@media only screen and (max-width: 575px) {
+    .container {
+        .item {
+            flex-basis: 100%;
+        }
+    }
+}

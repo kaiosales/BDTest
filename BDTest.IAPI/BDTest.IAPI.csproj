@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\BDTest.DependencyInjection\BDTest.DependencyInjection.csproj" />
+    <ProjectReference Include="..\BDTest.Domain\BDTest.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Grpc.AspNetCore" Version="2.35.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.35.0" />
+      <Protobuf Include="..\BDTest.Core\Protos\GenerateController.proto" GrpcServices="Server" Link="Protos\GenerateController.proto" />
+      <Protobuf Include="..\BDTest.Core\Protos\MultiplyController.proto" GrpcServices="Server" Link="Protos\MultiplyController.proto" />
+  </ItemGroup>
+
+</Project>

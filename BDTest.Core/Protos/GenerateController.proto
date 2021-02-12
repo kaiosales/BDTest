@@ -1,0 +1,15 @@
+syntax = "proto3";
+option csharp_namespace = "BDTest.Core.Protos";
+package GenerateNumber;
+
+message GenerateNumbersRequest {
+    int32 count = 1;
+}
+
+service GenerateController {
+    rpc GenerateNumber(GenerateNumbersRequest) returns (stream GetNumbersResponse);
+}
+
+message GetNumbersResponse {
+    int32 number = 1;
+}

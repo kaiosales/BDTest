@@ -1,0 +1,1 @@
+export { ApiPrefixInterceptor } from './api-prefix.interceptor';

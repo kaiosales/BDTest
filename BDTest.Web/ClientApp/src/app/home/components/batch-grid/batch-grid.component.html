@@ -1,0 +1,3 @@
+<div class="container" [@fadeIn]="getAnimation()">
+    <app-batch-item class="item" [batch]="batch" *ngFor="let batch of batches; trackBy: trackById" ></app-batch-item>
+</div>

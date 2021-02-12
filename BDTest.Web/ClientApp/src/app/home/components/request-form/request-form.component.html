@@ -1,0 +1,37 @@
+<form [formGroup]="requestForm" (ngSubmit)="createRequest()" novalidate>
+    <h1>Add new request</h1>
+    <mat-divider></mat-divider>
+    
+    <div class="from-group">
+        <mat-label class="label">Batch count</mat-label>
+        <mat-slider class="input"
+            [max]="10"
+            [min]="1"
+            [step]="1"
+            [thumbLabel]="true"
+            [tickInterval]="1"
+            formControlName="batchCount">
+        </mat-slider>
+        <mat-hint class="hint">{{batchCountControl?.value}}</mat-hint>
+    </div>
+    <div class="from-group">
+        <mat-label class="label">Numbers per batch</mat-label>
+        <mat-slider class="input"
+            [max]="10"
+            [min]="1"
+            [step]="1"
+            [thumbLabel]="true"
+            [tickInterval]="1"
+            formControlName="numberPerBatch">
+        </mat-slider>
+        <mat-hint class="hint">{{numberPerBatchControl?.value}}</mat-hint>
+    </div>
+    <footer class="footer">
+        <button mat-button class="action" [disabled]="requested" (click)="cancel()">
+            Cancel
+        </button>
+        <button mat-raised-button color="primary" class="action" type="submit" [disabled]="requested">
+            Request
+        </button>
+    </footer>
+</form>

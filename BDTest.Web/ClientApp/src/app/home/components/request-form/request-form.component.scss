@@ -1,0 +1,34 @@
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+form {
+
+    .from-group {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        margin-bottom: 16px;
+        padding-top: 16px;
+        width: 50%;
+
+        .label {
+            flex: 1 1 100%;
+            margin-bottom: 16px;
+        }
+
+        .input {
+            flex: 1 1 auto;
+        }
+    }
+
+    .footer {
+        display: flex;
+        padding: 16px 0;
+        justify-content: flex-end;
+
+        .action {
+            margin-left: 16px;
+        }
+    }
+}

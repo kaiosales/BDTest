@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BDTest.Client\BDTest.Client.csproj" />
+    <ProjectReference Include="..\BDTest.Data\BDTest.Data.csproj" />
+    <ProjectReference Include="..\BDTest.Domain\BDTest.Domain.csproj" />
+    <ProjectReference Include="..\BDTest.IAPI.Client\BDTest.IAPI.Client.csproj" />
+  </ItemGroup>
+
+</Project>

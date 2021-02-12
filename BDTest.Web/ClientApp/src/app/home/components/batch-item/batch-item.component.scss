@@ -1,0 +1,116 @@
+@import '~@angular/material/theming';
+
+.card {
+
+    bottom: 15px;
+    left: 15px;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: background .4s cubic-bezier(.25,.8,.25,1), box-shadow .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1);
+
+    mat-hint {
+        font-size: 0.9rem;
+        opacity: .8;
+    }
+
+    mat-label {
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+    .progress {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .icon {
+        .mat-icon {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+    }
+
+    .content {
+        height: 168px;
+        overflow-y: auto;
+    }
+
+    .item {
+
+        span {
+            flex: 1 1 50%;
+        }
+    }
+
+    .footer {
+        display: flex;
+        font-size: 1.1rem;
+        justify-content: flex-end;;
+        margin: 0;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate3d(100%, -100%, 0);
+        transition: opacity .2s linear, transform .4s ease-out;
+    }
+
+    &::before {
+        border: solid 25px transparent;
+        border-right-color: mat-color(mat-palette($mat-orange, A200));
+        border-top-color: mat-color(mat-palette($mat-orange, A200));
+        content: '';
+        height: 0;
+        right: -5px;
+        top: -5px;
+        width: 0;
+    }
+
+    &::after {
+        color: #FFF;
+        content: 'done';
+        font-family: 'Material Icons';
+        font-weight: bold;
+        right: 3px;
+        opacity: 0;
+        top: 3px;
+    }
+
+    &:hover {
+        box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+        transform: translate3d(0,0,0) scale(1.05, 1.05);
+    }
+
+  }
+
+
+.card.done {
+    &::before,
+    &::after {
+        transform: translate3d(0, 0, 0);
+        transition: opacity .4s .2s linear, transform .6s cubic-bezier(.8, -.5, .2, 1.4);
+    }
+    &::after{
+        opacity: 1;
+    }
+}
+
+  ::ng-deep {
+      .mat-progress-bar-background {
+        opacity: 0;
+      }
+
+      .mat-progress-bar-buffer {
+          opacity: .2;
+      }
+
+      .mat-card-header-text {
+          z-index: 1;
+      }
+  }

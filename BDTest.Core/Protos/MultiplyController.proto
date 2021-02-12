@@ -1,0 +1,15 @@
+syntax = "proto3";
+option csharp_namespace = "BDTest.Core.Protos";
+package MultiplyNumber;
+
+message MultiplyNumberRequest {
+    int32 number = 1;
+}
+
+service MultiplyController {
+    rpc MultiplyNumber(MultiplyNumberRequest) returns (GetProductResponse);
+}
+
+message GetProductResponse {
+    int32 value = 1;
+}
